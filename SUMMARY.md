@@ -4,7 +4,7 @@
 
 ## 📠 Machines
 
-* [Precious](machines/precious.md)
+* [Ambassador](machines/ambassador.md)
 * [Blue](machines/blue.md)
 * [Academy](machines/academy.md)
 * [Dev](machines/dev.md)
