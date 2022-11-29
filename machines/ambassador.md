@@ -301,7 +301,7 @@ password: anEnglishManInNewYork027468
 ```
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Post exploitation
 

