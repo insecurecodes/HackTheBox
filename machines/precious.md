@@ -49,3 +49,8 @@ The most prominent is related to WKHTMLTOPDF, and with a quick google we can fin
 ### Other possible vulnerable services
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="danger" %}
+TO BE CONTINUED ....
+{% endhint %}
+
