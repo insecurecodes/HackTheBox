@@ -234,7 +234,7 @@ select * from data_source;
 
 ```
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Mysql with Grafana user
 
@@ -301,7 +301,7 @@ password: anEnglishManInNewYork027468
 ```
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Post exploitation
 

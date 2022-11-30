@@ -36,11 +36,11 @@ python3 -m http.server 80
 
 Intercept traffic and send to repeater
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 With the repeater option we can identify interesting things in the response
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 The most prominent is related to WKHTMLTOPDF, and with a quick google we can find several exploits to it, however, none of them worked.&#x20;
 
@@ -48,4 +48,4 @@ The most prominent is related to WKHTMLTOPDF, and with a quick google we can fin
 
 ### Other possible vulnerable services
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
